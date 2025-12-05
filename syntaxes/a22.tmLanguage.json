@@ -1,0 +1,36 @@
+{
+    "scopeName": "source.a22",
+    "patterns": [
+        {
+            "comment": "Comments",
+            "match": "(#|//).*",
+            "name": "comment.line.a22"
+        },
+        {
+            "comment": "Strings",
+            "begin": "\"",
+            "end": "\"",
+            "name": "string.quoted.double.a22"
+        },
+        {
+            "comment": "Keywords",
+            "match": "\\b(agent|tool|resource|router|var|input|output|true|false|null)\\b",
+            "name": "keyword.control.a22"
+        },
+        {
+            "comment": "Numbers",
+            "match": "\\b\\d+(\\.\\d+)?\\b",
+            "name": "constant.numeric.a22"
+        },
+        {
+            "comment": "Block Types",
+            "match": "\\b([a-zA-Z_][a-zA-Z0-9_]*)(?=\\s*(\"|\\{))",
+            "name": "entity.name.type.a22"
+        },
+        {
+            "comment": "Variables/References",
+            "match": "\\${[^}]+}",
+            "name": "variable.other.a22"
+        }
+    ]
+}

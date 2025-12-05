@@ -1,0 +1,54 @@
+{
+  "name": "a22-vscode",
+  "displayName": "A22 Language Support",
+  "description": "Language support for A22 Agent DSL",
+  "version": "0.0.1",
+  "publisher": "A22Foundation",
+  "engines": {
+    "vscode": "^1.80.0"
+  },
+  "categories": [
+    "Programming Languages"
+  ],
+  "main": "./dist/extension.js",
+  "activationEvents": [
+    "onLanguage:a22"
+  ],
+  "contributes": {
+    "languages": [
+      {
+        "id": "a22",
+        "aliases": [
+          "A22",
+          "a22"
+        ],
+        "extensions": [
+          ".a22"
+        ],
+        "configuration": "./language-configuration.json"
+      }
+    ],
+    "grammars": [
+      {
+        "language": "a22",
+        "scopeName": "source.a22",
+        "path": "./syntaxes/a22.tmLanguage.json"
+      }
+    ]
+  },
+  "scripts": {
+    "vscode:prepublish": "npm run package",
+    "compile": "tsc -b",
+    "watch": "tsc -b -w",
+    "package": "vsce package"
+  },
+  "devDependencies": {
+    "@types/vscode": "^1.80.0",
+    "@types/node": "^16.x",
+    "typescript": "^5.0.0",
+    "vsce": "^2.0.0"
+  },
+  "dependencies": {
+    "vscode-languageclient": "^9.0.0"
+  }
+}
